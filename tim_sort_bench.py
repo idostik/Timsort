@@ -13,9 +13,9 @@ def create_test_data(count):
     shuffle(randomized)
 
     return {
-        f"{count:6d} sorted": numbers,
-        f"{count:6d} reverse sorted": list(reversed(numbers)),
-        f"{count:6d} randomize": randomized
+        f"{count:7d} sorted": numbers,
+        f"{count:7d} reverse sorted": list(reversed(numbers)),
+        f"{count:7d} randomized": randomized
     }
 
 
@@ -34,12 +34,11 @@ def benchmark_functions(test_data, *functions):
 
 
 test_data = {}
-for count in (100, 1000, 10_000, 100_000):
+for count in (10, 100, 1_000, 5_000, 10_000, 50_000, 100_000, 200_000, 500_000, 1_000_000):
     test_data[count] = create_test_data(count)
 
 benchmark_functions(
     test_data,
-    sorted,
-    #insertion_sort,
+    #sorted,
     tim_sort,
     )

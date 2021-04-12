@@ -47,7 +47,9 @@ def tim_sort(arr):
     while size < n:
         for start in range(0, n, size * 2):
             mid = start + size - 1
-            end = start + size * 2 - 1 if start + size * 2 - 1 < n - 1 else n - 1
+            end = start + size * 2 - 1 
+            if end > n - 1:
+                 end = n - 1
             
             merged_arr = merge(
                 left=arr[start:mid + 1],
