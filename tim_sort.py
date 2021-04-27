@@ -1,6 +1,3 @@
-from random import randint, shuffle
-from collections import deque
-
 def insertion_sort(arr, left=0, right=None):
     if right is None:
         right = len(arr) - 1
@@ -52,8 +49,8 @@ def tim_sort(arr):
                  end = n - 1
             
             merged_arr = merge(
-                left=arr[start:mid + 1],
-                right=arr[mid + 1:end + 1]
+                arr[start:mid + 1],
+                arr[mid + 1:end + 1]
             )
             arr[start:start + len(merged_arr)] = merged_arr
 

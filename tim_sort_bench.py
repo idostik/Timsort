@@ -34,7 +34,26 @@ def benchmark_functions(test_data, *functions):
 
 
 test_data = {}
-for count in (10, 100, 1_000, 5_000, 10_000, 50_000, 100_000, 200_000, 500_000, 1_000_000):
+for count in (
+    10,
+    20,
+    50,
+    100,
+    200,
+    500,
+    1_000,
+    2_000, 
+    5_000, 
+    10_000,
+    20_000,
+    50_000, 
+    100_000, 
+    200_000, 
+    500_000, 
+    1_000_000, 
+    2_000_000, 
+    5_000_000
+    ):
     test_data[count] = create_test_data(count)
 
 benchmark_functions(
